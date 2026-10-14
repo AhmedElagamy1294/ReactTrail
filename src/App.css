@@ -1,4 +1,9 @@
 .expensesIncomeHolder {
     display: flex;
     
+    
+}
+
+.expensesPanel, .incomePanel {
+    flex: 1
 }

@@ -1,6 +1,6 @@
 export function IncomePanel (){
     return (
-    <div>
+    <div className="incomePanel">
         here is IncomePanel
     </div>
     )
