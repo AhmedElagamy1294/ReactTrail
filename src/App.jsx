@@ -6,13 +6,24 @@ import { ExpensesPanel } from "./components/ExpensesPanel/ExpensesPanel";
 import { IncomePanel } from "./components/IncomePanel/IncomePanel";
 
 function App() {
+  const [expenses , setExpenses] = useState([])
+  const [incomes , setIncomes] = useState([])
+
+  function addBalanceHandle(item){
+    if(item.amount > 0 ){
+      setIncomes([...incomes,item])
+    }
+    else{
+      setExpenses([...expenses,item])
+    }
+  }
   return (
     <>
       <RemainingBalance />
-      <AddBalance />
+      <AddBalance addBalance = {addBalanceHandle} />
       <div className="expensesIncomeHolder">
-        <ExpensesPanel />
-        <IncomePanel />
+        <ExpensesPanel expenses= {expenses} />
+        <IncomePanel incomes={incomes} />
       </div>
     </>
   );

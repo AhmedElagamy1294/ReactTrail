@@ -1,7 +1,9 @@
-export function IncomePanel (){
+import { BalanceItem } from "../balanceItem/BalanceItem";
+
+export function IncomePanel ({incomes}){
     return (
     <div className="incomePanel">
-        here is IncomePanel
+       {incomes.map((item)=><BalanceItem label={item.label} amount={item.amount} />)} 
     </div>
     )
 }

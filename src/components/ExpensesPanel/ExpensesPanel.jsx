@@ -1,10 +1,10 @@
 import { BalanceItem } from "../balanceItem/BalanceItem";
 
-export function ExpensesPanel (){
+export function ExpensesPanel ({expenses}){
     return (
     <div className="expensesPanel">
-        here is expenses
-        <BalanceItem />
+        {expenses.map((item)=> <BalanceItem label = {item.label} amount = {item.amount}/>)}
+        
 
     </div>
     )
