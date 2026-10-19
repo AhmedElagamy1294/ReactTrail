@@ -17,16 +17,21 @@ function App() {
       setExpenses([...expenses,item])
     }
   }
-  return (
-    <>
+ return (
+  <div className="appContainer">
+    <div className="appCard">
+      <h1 className="appTitle">My Budget</h1>
+
       <RemainingBalance />
-      <AddBalance addBalance = {addBalanceHandle} />
+      <AddBalance addBalance={addBalanceHandle} />
+
       <div className="expensesIncomeHolder">
-        <ExpensesPanel expenses= {expenses} />
+        <ExpensesPanel expenses={expenses} />
         <IncomePanel incomes={incomes} />
       </div>
-    </>
-  );
+    </div>
+  </div>
+);
 }
 
 export default App;

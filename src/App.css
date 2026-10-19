@@ -1,9 +1,236 @@
-.expensesIncomeHolder {
-    display: flex;
-    
-    
+
+* {
+  box-sizing: border-box;
 }
 
-.expensesPanel, .incomePanel {
-    flex: 1
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e9eef5;
+  color: #0f172a;
+}
+
+.appContainer {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.appCard {
+  width: 100%;
+  max-width: 850px;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+}
+
+.appTitle {
+  margin: 0 0 24px;
+  font-size: 30px;
+}
+
+@media (max-width: 600px) {
+  .appContainer {
+    padding: 16px 10px;
+  }
+
+  .appCard {
+    padding: 20px 14px;
+    border-radius: 18px;
+  }
+}
+.formInput {
+  display: block;
+  width: 100%;
+  padding: 13px 14px;
+  margin-top: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #1e293b;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formInput:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.submitButton {
+  width: 100%;
+  padding: 13px 18px;
+  margin-top: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #1d4ed8;
+}
+
+.submitButton:active {
+  transform: scale(0.98);
+}
+
+/* General */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.appContainer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.appTitle {
+  font-size: 30px;
+  margin: 0 0 24px;
+}
+
+/* Cards */
+.card,
+.expensesPanel,
+.incomePanel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+/* Balance */
+.remainingBalance {
+  margin-bottom: 20px;
+}
+
+.remainingBalance p {
+  color: #64748b;
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.remainingBalance h2 {
+  margin: 0;
+  font-size: 32px;
+  color: #2563eb;
+}
+
+/* Income & Expenses */
+.expensesIncomeHolder {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.expensesPanel,
+.incomePanel {
+  min-width: 0;
+}
+
+.balanceItem {
+  padding: 14px;
+  margin-top: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+/* Form */
+.formInput {
+  width: 100%;
+  padding: 13px;
+  margin-top: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.formInput:focus {
+  outline: 2px solid #bfdbfe;
+  border-color: #2563eb;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 13px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background: #1d4ed8;
+}
+
+@media (max-width: 650px) {
+  .appContainer {
+    padding: 20px 14px;
+  }
+
+  .expensesIncomeHolder {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .expensesPanel,
+  .incomePanel {
+    padding: 18px;
+  }
+}
+.panelTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.panelIcon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.expenseIcon {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.incomeIcon {
+  color: #16a34a;
+  background: #dcfce7;
 }

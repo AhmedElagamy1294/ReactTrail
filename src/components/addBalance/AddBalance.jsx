@@ -7,18 +7,27 @@ export function AddBalance({ addBalance }) {
   return (
     <>
       <input
-        type="text"
-        onChange={(e) => setLabel(e.target.value)}
-        value={label}
-      />
-      <input
-        type="number"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-      />
-      <button onClick={() => addBalance({ label: label, amount: amount })}>
-        Submit
-      </button>
+  className="formInput"
+  type="text"
+  placeholder="Transaction name"
+  onChange={(e) => setLabel(e.target.value)}
+  value={label}
+/>
+
+<input
+  className="formInput"
+  type="number"
+  placeholder="Amount (+ income / - expense)"
+  value={amount}
+  onChange={(e) => setAmount(e.target.value)}
+/>
+
+<button
+  className="submitButton"
+  onClick={() => addBalance({ label, amount })}
+>
+  Add Transaction
+</button>
     </>
   );
 }
