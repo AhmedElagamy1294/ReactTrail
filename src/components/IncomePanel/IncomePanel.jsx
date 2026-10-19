@@ -1,6 +1,6 @@
 import { BalanceItem } from "../balanceItem/BalanceItem";
 
-export function IncomePanel({ incomes }) {
+export function IncomePanel({ incomes , handleDel }) {
   return (
     <div className="incomePanel">
       <h3 className="panelTitle">
@@ -10,9 +10,10 @@ export function IncomePanel({ incomes }) {
 
       {incomes.map((item, index) => (
         <BalanceItem
-          key={item.id ?? index}
+          keyy={item.id ?? index}
           label={item.label}
           amount={item.amount}
+          handleDel={() => handleDel(item.id, 'income')}
         />
       ))}
     </div>
